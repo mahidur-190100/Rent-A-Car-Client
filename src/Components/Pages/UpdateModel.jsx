@@ -18,7 +18,7 @@ const UpdateModel = () => {
     }
 
     try {
-      const res = await fetch(`https://https://rent-a-car-server-livid.vercel.app/models/${model._id}`, {
+      const res = await fetch(`https://rent-a-car-server-livid.vercel.app/models/${model._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(totalVar),

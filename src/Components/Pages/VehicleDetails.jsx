@@ -33,7 +33,7 @@ const VehicleDetails = () => {
       if (!result.isConfirmed) return
 
       try {
-        const res = await fetch(`https://https://rent-a-car-server-livid.vercel.app/models/${_id}`, {
+        const res = await fetch(`https://rent-a-car-server-livid.vercel.app/models/${_id}`, {
           method: 'DELETE',
         })
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
