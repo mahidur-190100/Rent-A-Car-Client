@@ -90,7 +90,7 @@ const HomePage = () => {
           Welcome to TravelEase
           
         </h2>
-        <p className="text-center text-sm sm:text-base text-gray-700 momo-trust">
+        <p className="text-center text-sm sm:text-base  momo-trust">
            Book, ride, and explore.
         </p>
       </div>

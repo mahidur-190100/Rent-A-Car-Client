@@ -32,10 +32,13 @@ export const router = createBrowserRouter([
       },
       {
         path: '/VehicleDetails/:id',
-        
+
         loader: ({ params }) =>
           fetch(`https://rent-a-car-server-livid.vercel.app/models/${params.id}`),
-        element: <VehicleDetails />,
+        element:
+          <PrivateRoute>
+            <VehicleDetails />
+          </PrivateRoute>
       },
       {
         path: '/UpdateModel/:id',
