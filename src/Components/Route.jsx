@@ -24,9 +24,9 @@ export const router = createBrowserRouter([
       {
         path: '/All-vehicle',
         element: (
-          <PrivateRoute>
+          
             <All_vehicle />
-          </PrivateRoute>
+         
         ),
         loader: () => fetch('https://rent-a-car-server-livid.vercel.app/models'),
       },
@@ -42,14 +42,32 @@ export const router = createBrowserRouter([
       },
       {
         path: '/UpdateModel/:id',
-        Component: UpdateModel,
+        element:
+        <PrivateRoute>
+          <UpdateModel />
+        </PrivateRoute>,
         loader: ({ params }) =>
           fetch(`https://rent-a-car-server-livid.vercel.app/models/${params.id}`),
       },
 
-      { path: '/Add-vehicle', element: <Add_vehicle /> },
-      { path: '/My-vehicles', element: <My_vehicles /> },
-      { path: '/My-bookings', element: <My_bookings /> },
+      { path: '/Add-vehicle',
+         element: 
+         <PrivateRoute>
+         <Add_vehicle />
+         </PrivateRoute> },
+
+      { path: '/My-vehicles',
+        
+        element: 
+        <PrivateRoute>
+        
+        <My_vehicles />
+        </PrivateRoute> },
+      { path: '/My-bookings', 
+        element: 
+        <PrivateRoute>
+        <My_bookings /> 
+        </PrivateRoute> },
       { path: '/Login', element: <Login /> },
       { path: '/Register', Component: Register },
     ],
