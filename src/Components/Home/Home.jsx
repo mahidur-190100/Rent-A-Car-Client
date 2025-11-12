@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
+import GlobalRouteLoader from '../GlobalRouteLoader';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Outlet />
       </main>
       <Footer />
+      <GlobalRouteLoader />
     </div>
   );
 };
