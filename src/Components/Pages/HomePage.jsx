@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { NavLink, useLoaderData } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import All_VehicleCard from '../Card/All_VehicleCard';
+import StaticPart from './StaticPart';
 
 const heroImages = [
   'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop',
@@ -83,15 +84,15 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen">
-       {/* Top welcome text */}
+      {/* Top welcome text */}
       <div className="w-full py-2">
-        <h2 className= "text-center text-4xl mt-5 mb-5 momo-trust">
+        <h2 className="text-center text-4xl mt-5 mb-5 momo-trust">
 
           Welcome to TravelEase
-          
+
         </h2>
         <p className="text-center text-sm sm:text-base  momo-trust">
-           Book, ride, and explore.
+          Book, ride, and explore.
         </p>
       </div>
 
@@ -150,16 +151,25 @@ const HomePage = () => {
           ))}
         </div>
 
-        {data.length > 3 && (
-          <div className="text-center mt-8 lg:hidden">
-            <NavLink to={"/All-vehicle"}>
-              <button className="btn btn-outline btn-primary">
-                View All Vehicles
-              </button>
-            </NavLink>
-          </div>
-        )}
+
+        <div className="text-center mt-8 lg:hidden">
+          <NavLink to={"/All-vehicle"}>
+            <button className="btn btn-outline btn-primary">
+              View All Vehicles
+            </button>
+          </NavLink>
+        </div>
       </div>
+
+    <div>
+      <h2 className="text-center text-3xl font-bold mb-5">Here is our stats</h2>
+      <section className="w-full grid place-items-center mb-15">
+        <StaticPart />
+      </section>
+
+    </div>
+      
+
 
     </div>
   )
