@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from './Home/Home';
 import Add_vehicle from './Pages/Add_vehicle';
 import My_vehicles from './Pages/My_vehicles';
-import My_bookings from './Pages/My_bookings';
+
 import All_vehicle from './Pages/All_vehicle';
 import Login from './Login/Login';
 import Register from './Register/Register';
@@ -62,11 +62,6 @@ export const router = createBrowserRouter([
         <PrivateRoute>
         
         <My_vehicles />
-        </PrivateRoute> },
-      { path: '/My-bookings', 
-        element: 
-        <PrivateRoute>
-        <My_bookings /> 
         </PrivateRoute> },
       { path: '/Login', element: <Login /> },
       { path: '/Register', Component: Register },

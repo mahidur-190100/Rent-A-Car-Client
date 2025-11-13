@@ -19,6 +19,7 @@ const VehicleDetails = () => {
     createdAt,
     _id,
   } = model || {}
+ 
 
   const handleDelete = () => {
     Swal.fire({
@@ -149,7 +150,7 @@ const VehicleDetails = () => {
                 Update
               </Link>
 
-              <button
+              <button 
                 className="btn w-full sm:w-auto border-0 text-white rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700"
               >
                 Book

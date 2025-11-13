@@ -162,7 +162,7 @@ const HomePage = () => {
       </div>
 
     <div>
-      <h2 className="text-center text-3xl font-bold mb-5">Here is our stats</h2>
+      <h2 className="text-center text-3xl font-bold mb-5 momo-trust">Here is our stats</h2>
       <section className="w-full grid place-items-center mb-15">
         <StaticPart />
       </section>
