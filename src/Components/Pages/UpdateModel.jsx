@@ -28,8 +28,6 @@ const UpdateModel = () => {
       navigate('/All-vehicle', { replace: true })
     } catch (err) {
         console.error('Error:', err)
-            
-      // handle error UI here if you want (toast/alert)
     }
   }
 

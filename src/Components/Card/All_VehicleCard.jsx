@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom'
 
 const All_VehicleCard = ({ model = {} }) => {
   const { vehicleName, coverImage, description, _id, category, pricePerDay } = model
-
-  // Safe price display (formats number, falls back to raw text)
   const placeholderImg = 'https://placehold.co/600x400?text=Vehicle'
 
   return (
@@ -44,7 +42,7 @@ const All_VehicleCard = ({ model = {} }) => {
           {description || 'No description provided.'}
         </p>
 
-        {/* Category + Price row (redundant with badges but useful on small screens) */}
+        {/* Category + Price row  */}
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs text-gray-500">
             {category ? `Category: ${category}` : 'Category: —'}

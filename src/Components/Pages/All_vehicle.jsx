@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import All_VehicleCard from '../Card/All_VehicleCard'
 
-// Use your API base URL (env) and fall back to your Vercel API domain
+// Use your API base URL 
 const API_BASE = import.meta.env.VITE_API_URL || 'https://rent-a-car-server-livid.vercel.app'
 
 const All_vehicle = () => {
@@ -14,10 +14,9 @@ const All_vehicle = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  // If the loader data changes (revalidation), keep state in sync
   useEffect(() => {
     setSearch(initialList)
-  }, [JSON.stringify(initialList)]) // stringify to compare contents safely
+  }, [JSON.stringify(initialList)]) 
 
   const handleSearch = async (e) => {
     e.preventDefault()
@@ -47,7 +46,7 @@ const All_vehicle = () => {
       const list = Array.isArray(body) ? body : Array.isArray(body?.data) ? body.data : []
       setSearch(list)
     } catch (err) {
-      setSearch([]) // keep it an array to avoid .map crash
+      setSearch([]) 
       setError(err?.message || 'Search failed')
     } finally {
       setLoading(false)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLoaderData, Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { toast } from 'react-toastify'
 
 const VehicleDetails = () => {
   const data = useLoaderData()
@@ -19,7 +20,21 @@ const VehicleDetails = () => {
     createdAt,
     _id,
   } = model || {}
- 
+
+  const handleBook = () => {
+    // Show success toast
+    toast.success('Successfully booked!', {
+      position: 'top-center',
+      autoClose: 1500,
+      theme: 'colored',
+    })
+
+    // Navigate to All Vehicles (toast will persist because ToastContainer is at root)
+    navigate('/All-vehicle')
+
+    // If you prefer to let users read toast first:
+    // setTimeout(() => navigate('/All-vehicle'), 1200)
+  }
 
   const handleDelete = () => {
     Swal.fire({
@@ -49,9 +64,7 @@ const VehicleDetails = () => {
 
         navigate('/All-vehicle')
       } catch (error) {
-
         console.error('Error:', error)
-        // Swal.fire('Error', 'Failed to delete. Please try again.', 'error')
       }
     })
   }
@@ -150,7 +163,8 @@ const VehicleDetails = () => {
                 Update
               </Link>
 
-              <button 
+              <button
+                onClick={handleBook}
                 className="btn w-full sm:w-auto border-0 text-white rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700"
               >
                 Book

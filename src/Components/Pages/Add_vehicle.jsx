@@ -24,7 +24,6 @@ const Add_vehicle = () => {
     }
 
     try {
-      // FIX: correct API URL (remove the extra https://)
       const res = await fetch('https://rent-a-car-server-livid.vercel.app/models', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -34,9 +33,7 @@ const Add_vehicle = () => {
       await res.json()
 
       toast.success('Vehicle added successfully')
-      // FIX: use absolute path to match your router (/All-vehicle)
       navigate('/All-vehicle', { replace: true })
-      // Alternatively (relative): navigate('../All-vehicle', { replace: true })
     } catch (err) {
       toast.error(err.message || 'Something went wrong')
     }

@@ -99,7 +99,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Right - Auth Area */}
+      {/* Right */}
       <div className="navbar-end">
         {loading ? (
           <div className="skeleton h-10 w-24" />
